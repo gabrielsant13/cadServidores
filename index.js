@@ -82,9 +82,9 @@ function verifyJWT(req,res,next){
             console.log("Autorizado")
 
             //esse 1 do userId seria uma chave primaria vinda do banco de dados
-            const token = await jwt.sign({userId: 1}, SECRET, {expiresIn: 300})
+            const token = await jwt.sign({userId: 2}, SECRET, {expiresIn: 300})
             res.json(token)
-
+            return
         }
         res.status(401).json("Usuario nao autorizado")
     })
